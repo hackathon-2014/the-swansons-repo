@@ -1,6 +1,14 @@
+var render = function(template, data, element) {
+
+  var markup = _.template(template,data);
+
+  element.html(markup);
+
+};
+
 var timelineTmpl = [
 
-  "<%_.each(DATA, function(element, index, list) {%>",
+  "<%_.each(data, function(element, index, list) {%>",
 
     "<h2><%= element.name %></h2>",
     "<div class=\"bdgtAmount\">",
@@ -19,9 +27,9 @@ var timelineTmpl = [
 
 var budgetTmpl = [
 
-  "<%_.each(DATA, function(element, index, list) {%>",
+  "<%_.each(data, function(element, index, list) {%>",
 
-    "<li><%= element.name %>",
+    "<li><%= element.budget[0].budg_name %>",
 
   "<%})%>"
 

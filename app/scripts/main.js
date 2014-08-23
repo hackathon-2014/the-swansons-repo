@@ -73,4 +73,27 @@ $(document).ready(function() {
 
   });
 
+  $('.inner-wrap').on('click', 'a', function(event) {
+
+    event.preventDefault();
+
+    $.ajax({
+
+      url:database,
+      type:"GET",
+      success:function(response) {
+
+        window.data = response;
+        console.log(data);
+
+        render(budgetTmpl, data, $('.budgetDisplay'));
+
+      }
+
+    });
+
+
+
+  });
+
 });
