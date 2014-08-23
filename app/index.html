@@ -10,6 +10,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <link rel="stylesheet" href="styles/foundation.css">
@@ -20,6 +21,7 @@
     <!-- endbuild -->
 
   </head>
+<!-- BODY STARTS HERE !!!!!!!!!!!!!-->
   <body>
     <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
@@ -45,6 +47,19 @@
   </div>
 </div>
     <br/>
+    <div class="login">
+      <form>
+        <ul>
+          <li><input type="text" name="username" placeholder="Username" required></li>
+          <li><input type="text" name="password" placeholder="Password" required></li>
+          <li><button class="button" type="submit">Login</button></li>
+        </ul>
+      </form>
+    </div>
+
+
+    <!-- NEW BUDGET FORM -->
+
     <form class="newBudget">
       <div class="budgetItemName">
         <h2>Budget Name:</h2>
@@ -55,6 +70,8 @@
         $<input type="number" placeholder="Enter Budget Amount" required>
       </div>
     </form>
+
+    <!-- NEW EXPENSE FORM -->
     <form class="newExpenseItem">
       <div class="expenseItemName">
         <h2>Name:</h2>
@@ -84,6 +101,16 @@
       <li><button class="button" type="submit">Login</button></li>
     </ul>
 
+    <!-- BUDGET TIMELINE -->
+    <section class="budgetTimeline">
+      <div class="budget">
+
+      </div>
+      <div class=expense>
+
+      </div>
+    </section>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -100,8 +127,5 @@
     <script src="scripts/foundation/foundation.tab.js"></script>
     <script type="text/javascript">$(document).foundation();</script>
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-</body>
+  </body>
 </html>
