@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css" />
     <!-- endbower -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="styles/foundation.css">
     <link rel="stylesheet" href="images/icomoon/style.css">
 
     <!-- build:css styles/main.css -->
@@ -20,6 +21,7 @@
     <!-- endbuild -->
 
   </head>
+<!-- BODY STARTS HERE !!!!!!!!!!!!!-->
   <body>
     <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
@@ -45,7 +47,7 @@
   </div>
 </div>
 
-
+    <br/>
     <div class="login">
       <form>
         <ul>
@@ -58,6 +60,7 @@
 
 
     <!-- NEW BUDGET FORM -->
+
     <form class="newBudget">
       <div class="budgetItemName">
         <h2>Budget Name:</h2>
@@ -95,6 +98,9 @@
       </div>
     </form>
 
+    <ul>
+      <li><button class="button" type="submit">Login</button></li>
+    </ul>
 
     <!-- BUDGET TIMELINE -->
     <section class="budgetTimeline">
@@ -112,6 +118,15 @@
     <script src="../bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="scripts/fastclick.js"></script>
+    <script src="scripts/foundation/foundation.js"></script>
+    <script src="scripts/foundation/foundation.alert.js"></script>
+    <script src="scripts/foundation/foundation.reveal.js"></script>
+    <script src="scripts/foundation/foundation.slider.js"></script>
+    <script src="scripts/foundation/foundation.offcanvas.js"></script>
+    <script src="scripts/foundation/foundation.dropdown.js"></script>
+    <script src="scripts/foundation/foundation.tab.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
 
   </body>
 </html>
