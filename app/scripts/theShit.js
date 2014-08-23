@@ -135,6 +135,8 @@ var swanson = {
       //swanson.getBudget();
 
     });
+
+    /*Event to render budget timeline*/
   },
   initStyling: function () {
     console.log('styling start');
@@ -156,6 +158,7 @@ var swanson = {
         var items = window.items = response;
         //swanson.itemCount(items);
         //swanson.renderBudget(itemTmpl, items, $("#itemList"));
+        swanson.renderBudget(budgetTmpl, items, $("#itemList"));
 
       }
     });
