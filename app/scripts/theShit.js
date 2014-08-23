@@ -4,8 +4,10 @@ var goTime = function($target) {
   var timelineTmpl = '';
   for (var k = 0; k < 2; k ++) {
     timelineTmpl += "<h3>" + data.budget[k].budg_name + "</h3><h3>" + data.budget[k].budg_amount + "</h3>"
+    var current_budget = data.budget[k].budg_amount;
     for (var j = 0; j < 2; j++) {
-      timelineTmpl += "<div class=\"expenseDesc\"><h3 class=\"expenseName\">" + data.budget[k].budg_expence[j].ex_name + "</h3><h3 class=\"expenseDate\">" + data.budget[k].budg_expence[j].ex_date + "</h3><h3 class=\"expenseAmount\">" + data.budget[k].budg_expence[j].ex_amount + "</h3></div>"
+      current_budget -= data.budget[k].budg_expence[j].ex_amount;
+      timelineTmpl += "<div class=\"expenseDesc\"><h3 class=\"expenseName\">" + data.budget[k].budg_expence[j].ex_name + "</h3><h3 class=\"expenseDate\">" + data.budget[k].budg_expence[j].ex_date + "</h3><h3 class=\"expenseAmount\">Cost: " + data.budget[k].budg_expence[j].ex_amount + "</h3><h3 class=\"remainingBudget\">Remaining Budget: " + current_budget + "<h3></div>"
     }
   };
 
