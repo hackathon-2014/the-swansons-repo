@@ -39,7 +39,7 @@ $(document).ready(function() {
           + "<h2>Date:</h2>"
           + "<input type=\"date\" placeholder=\"Enter Expense Date\">"
         + "</div>"
-        + "<div class=\"budgetItemCategory\">"
+        + "<div class=\"expenseItemCategory\">"
           + "<h2>Select a category:</h2>"
           + "<select>"
             + "<option value=\"work\">Work</option>"
