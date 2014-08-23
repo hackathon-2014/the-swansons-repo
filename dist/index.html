@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>hackathon</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="images/icomoon/style.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+<!-- BODY STARTS HERE !!!!!!!!!!!!!-->
+  <body>
+
+    <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+
+
+
+    <!-- Off Canvas Menu -->
+    <aside class="left-off-canvas-menu">
+        <!-- whatever you want goes here -->
+        <ul class="budgetDisplay">
+
+        </ul>
+    </aside>
+
+
+    <section class="hide">
+      <header class="profileInfo">
+      <a class="left-off-canvas-toggle" href="#" ><i class="burger fa fa-bars"></i></a>
+        <div class="info">
+          <h2 class="username"></h2>
+          <img class="prof_pic" src="http://placehold.it/50x50">
+        </div>
+      </header>
+      <a href="#" class="addBudget">+ Budget</a>
+      <a href="#" class="addExpense">+ Expense</a>
+      <div class="mainContainer">
+        <!-- templated material goes here -->
+      </div>
+    </section>
+  <!-- close the off-canvas menu -->
+
+    <div class="row">
+      <form class="login large-3 medium-6 small-12 columns">
+          <ul>
+            <li><input class="login_username" type="text" name="username" placeholder="Username" required></li>
+            <li><input class="login_password" type="password" name="password" placeholder="Password" required></li>
+            <li><button class="login_button" type="submit">Sign-up</button></li>
+          </ul>
+      </form>
+    </div>
+    <div class="row">
+      <form class="login_id_form large-3 medium-6 small-12 columns">
+          <ul>
+            <li><input class="login_id" type="text" name="sign_id" placeholder="Type your login number" required></li>
+            <li><button class="login_button" type="submit">Log-in</button></li>
+          </ul>
+      </form>
+    </div>
+  </div>
+</div>
+
+    <br/>
+
+    <script src="scripts/vendor.js"></script>
+    <!-- <script src="../bower_components/foundation/js/fastclick.js"></script> -->
+    <script src="../bower_components/foundation/js/foundation/foundation.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.alert.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.slider.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.tab.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/theShit.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+  </body>
+</html>

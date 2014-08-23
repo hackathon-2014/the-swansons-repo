@@ -10,20 +10,22 @@ var timelineTmpl = [
 
   "<%_.each(data, function(element, index, list) {%>",
 
-  "<% for (var i=0; i < 2; i++) { %>",
+    "<h2><%= element.budget %></h2>",
 
-    "<h3><%= element.budget[i].budg_name %></h3>",
-    "<h3><%= element.budget[i].budg_amount %></h3>",
-
-      "<% for (var i=0; i < 2; i++) { %>",
-        "<div class=\"expenseDesc\">",
-          "<h3 class=\"expenseName\"><%= element.budg_expence[i].ex_name %></h3>",
-          "<h3 class=\"expenseDate\"><%= element.budg_expence[i].ex_date %></h3>",
-          "<h3 class=\"expenseAmount\"><%= element.budg_expence[i].ex_amount %></h3>",
-        "</div>",
-      "<%} %>",
-
-  "<%} %>",
+  // "<% for (var i=0; i < 2; i++) { %>",
+  //
+  //   "<h3><%= element.budget[i].budg_name %></h3>",
+  //   "<h3><%= element.budget[i].budg_amount %></h3>",
+  //
+  //     "<% for (var i=0; i < 2; i++) { %>",
+  //       "<div class=\"expenseDesc\">",
+  //         "<h3 class=\"expenseName\"><%= element.budg_expence[i].ex_name %></h3>",
+  //         "<h3 class=\"expenseDate\"><%= element.budg_expence[i].ex_date %></h3>",
+  //         "<h3 class=\"expenseAmount\"><%= element.budg_expence[i].ex_amount %></h3>",
+  //       "</div>",
+  //     "<%} %>",
+  //
+  // "<%} %>",
 
 
     /*"<div class=\"bdgtAmount\">",
