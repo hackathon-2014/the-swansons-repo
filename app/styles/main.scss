@@ -15,12 +15,36 @@ body {
   font: $font;
 }
 
-header {
 
-  background-color: $colorsoftGreen;
+.profileInfo {
+  background-color: $colorSoftGreen;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  height: 70px;
 
-  .prof_pic {
-    border-radius: 100%;
+  .info {
+    margin: 10px;
+    vertical-align: middle;
+    position: absolute;
+    top:0px;
+    right:0px;
+
+    .prof_pic {
+      border-radius: 100%;
+      margin-left: 5px;
+    }
+    .username {
+      color: white;
+      font-size: 20px;
+      display: inline-block;
+      cursor: pointer;
+
+    }
+    .username:hover {
+      color: $colorBrown;
+    }
   }
 }
 
@@ -28,7 +52,7 @@ header {
   display: block;
   box-shadow: 1px 1px 5px 1px $colorSoftGreen;
   border-radius: 10px;
-
+  margin: 100px 5px;
 
   ul {
     list-style-type: none;
