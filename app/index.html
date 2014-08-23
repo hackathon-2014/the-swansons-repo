@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css" />
     <!-- endbower -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="styles/foundation.css">
     <link rel="stylesheet" href="images/icomoon/style.css">
 
     <!-- build:css styles/main.css -->
@@ -20,7 +21,32 @@
     <!-- endbuild -->
 
   </head>
+<!-- BODY STARTS HERE !!!!!!!!!!!!!-->
   <body>
+    <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+
+    <a class="left-off-canvas-toggle" href="#" >Menu</a>
+
+    <!-- Off Canvas Menu -->
+    <aside class="left-off-canvas-menu">
+        <!-- whatever you want goes here -->
+        <ul>
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+        </ul>
+    </aside>
+
+    <!-- main content goes here -->
+    <p>Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all possibilities in large societies to mathematics, allowing for the prediction of future events.</p>
+
+  <!-- close the off-canvas menu -->
+  <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+    <br/>
     <div class="login">
       <form>
         <ul>
@@ -33,6 +59,7 @@
 
 
     <!-- NEW BUDGET FORM -->
+
     <form class="newBudget">
       <div class="budgetItemName">
         <h2>Budget Name:</h2>
@@ -70,6 +97,9 @@
       </div>
     </form>
 
+    <ul>
+      <li><button class="button" type="submit">Login</button></li>
+    </ul>
 
     <!-- BUDGET TIMELINE -->
     <section class="budgetTimeline">
@@ -87,6 +117,15 @@
     <script src="../bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="scripts/fastclick.js"></script>
+    <script src="scripts/foundation/foundation.js"></script>
+    <script src="scripts/foundation/foundation.alert.js"></script>
+    <script src="scripts/foundation/foundation.reveal.js"></script>
+    <script src="scripts/foundation/foundation.slider.js"></script>
+    <script src="scripts/foundation/foundation.offcanvas.js"></script>
+    <script src="scripts/foundation/foundation.dropdown.js"></script>
+    <script src="scripts/foundation/foundation.tab.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
 
   </body>
 </html>
