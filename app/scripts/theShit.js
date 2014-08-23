@@ -29,6 +29,8 @@ var swanson = {
       swanson.createBudget(member);
       console.log('username end');
 
+
+
     });
 
     /*Event to render budget timeline*/

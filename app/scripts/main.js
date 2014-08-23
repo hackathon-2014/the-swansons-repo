@@ -8,6 +8,21 @@ $(document).ready(function() {
     $('.profileInfo').children('.info').children('.username').append(user);
     $('.login').hide();
     $('section').removeClass('hide');
+
+    $.ajax({
+
+      url:database,
+      type:"GET",
+      success:function(response) {
+
+        window.data = response;
+        console.log(data);
+
+        render(timelineTmpl, data, $('.mainContainer'));
+
+      }
+
+    });
   });
 
   $('.addBudget').on('click', function(event) {
@@ -100,7 +115,27 @@ $(document).ready(function() {
 
     });
 
+  });
 
+  $('.login').on('submit', ".login_button", function(event) {
+
+    event.preventDefault();
+    console.log("SUCCESS");
+
+    $.ajax({
+
+      url:database,
+      type:"GET",
+      success:function(response) {
+
+        window.data = response;
+        console.log(data);
+
+        render(timelineTmpl, data, $('.mainContainer'));
+
+      }
+
+    });
 
   });
 
