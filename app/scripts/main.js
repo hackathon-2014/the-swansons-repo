@@ -30,7 +30,7 @@ $(document).ready(function() {
     event.preventDefault();
     $('.mainContainer').html(
 
-      "<form class=\"newBudget\">"
+      "<form class=\"newBudget large-4 medium-6 small-12\">"
         + "<div class=\"budgetItemName\">"
           + "<h2>Budget Name:</h2>"
           + "<input type=\"text\" placeholder=\"Enter Budget Name\" required>"
@@ -58,7 +58,7 @@ $(document).ready(function() {
     event.preventDefault();
     $('.mainContainer').html(
 
-      "<form class=\"newExpenseItem\">"
+      "<form class=\"newExpenseItem large-4 medium-6 small-12\">"
         + "<div class=\"expenseItemName\">"
           + "<h2>Name:</h2>"
           + "<input type=\"text\" placeholder=\"Enter Expense Name\" required>"
@@ -74,7 +74,7 @@ $(document).ready(function() {
         + "<div class=\"expenseItemReceipt\">"
           + "<input type=\"file\" accept=\"image/JPEG\">"
         + "</div>"
-        + "<input class=\"expenseSubmit\" type=\"submit\">"
+        + "<input class=\"expenseSubmit tiny button\" type=\"submit\">"
       + "</form>"
 
     );
@@ -90,7 +90,7 @@ $(document).ready(function() {
         name:$(this).find('.budgetItemName input').val(),
         amount:$(this).find('.budgetItemAmount input').val(),
         category:$(this).find('.budgetItemCategory option').val(),
-        expense:[]
+        expense:["s"]
 
       };
 
@@ -116,27 +116,4 @@ $(document).ready(function() {
     });
 
   });
-
-  // $('.login').on('submit', ".login_button", function(event) {
-  //
-  //   event.preventDefault();
-  //   console.log("SUCCESS");
-  //
-  //   $.ajax({
-  //
-  //     url:database,
-  //     type:"GET",
-  //     success:function(response) {
-  //
-  //       window.data = response;
-  //       console.log(data);
-  //
-  //       render(timelineTmpl, data, $('.mainContainer'));
-  //
-  //     }
-  //
-  //   });
-  //
-  // });
-
 });
