@@ -30,6 +30,7 @@ var swanson = {
 
       $('.profileInfo').children('.info').children('.username').append(user);
       $('.login').hide();
+      $('.login_id_form').hide();
       $('section').removeClass('hide');
 
       $.ajax({
@@ -64,6 +65,40 @@ var swanson = {
       console.log('id number should have been posted');
     });
 
+
+    //CLICKING SUBMIT ON THE LOG-IN FORM
+    $('.login_id_form').on('submit', function(e) {
+      e.preventDefault();
+      console.log('username go');
+      window.user = $(this).find('.sing-in_username').val();
+      window.pass = $(this).find('.sign-in_password').val();
+
+      $('.profileInfo').children('.info').children('.username').append(user);
+      $('.login').hide();
+      $('.login_id_form').hide();
+      $('section').removeClass('hide');
+
+      $.ajax({
+
+        url:database,
+        type:"GET",
+        success:function(response){
+          console.log('get is go');
+          window.data = response;
+
+          render(passTmpl, data, $('.mainContainer'));
+          console.log('should render the damn template');
+        }
+
+      });
+
+        console.log('create end');
+      console.log('username end');
+      console.log('post id number');
+
+      //render(passTmpl, swanson.url, $('.mainContainer'));
+      console.log('id number should have been posted');
+    });
     //shows budget
     $('.addBudget').on('click', function(event) {
 
