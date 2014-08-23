@@ -28,7 +28,10 @@ var swanson = {
       };
       swanson.createBudget(member);
       console.log('username end');
+
     });
+
+    /*Event to render budget timeline*/
   },
   initStyling: function () {
     console.log('styling start');
@@ -48,8 +51,7 @@ var swanson = {
       type: 'GET',
       success: function (response) {
         var items = window.items = response;
-        swanson.itemCount(items);
-        swanson.renderBudget(itemTmpl, items, $("#itemList"));
+        swanson.renderBudget(budgetTmpl, items, $("#itemList"));
 
       }
     });
