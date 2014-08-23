@@ -37,7 +37,7 @@ body {
     }
     .username {
       color: white;
-      font-size: 20px;
+      font-size: 15px;
       display: inline-block;
       cursor: pointer;
 
@@ -81,6 +81,11 @@ body {
 
 section {
   margin-top: 80px;
+
+  a:hover {
+
+    color:$colorBrown;
+  }
 }
 
 .burger {
@@ -89,4 +94,13 @@ section {
 
 .hide {
   display: none;
+}
+
+.expenseSubmit {
+  background-color: $colorSoftGreen;
+  border-radius: 10px;
+}
+
+.expenseSubmit:hover {
+  background-color: $colorBrown;
 }

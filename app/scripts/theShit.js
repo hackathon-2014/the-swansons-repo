@@ -48,7 +48,6 @@ var swanson = {
       type: 'GET',
       success: function (response) {
         var items = window.items = response;
-        swanson.itemCount(items);
         swanson.renderBudget(itemTmpl, items, $("#itemList"));
 
       }
