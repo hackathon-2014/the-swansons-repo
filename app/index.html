@@ -20,24 +20,37 @@
 
   </head>
   <body>
-
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>Brendan<span class="icon-envelope-o"></span>Quinn</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-
-        <li>Sass</li>
-
-
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
-    </div>
+    <form class="newBudget">
+      <div class="budgetItemName">
+        <h2>Budget Name:</h2>
+        <input type="text" placeholder="Enter Budget Name" required>
+      </div>
+      <div class="budgetItemAmount">
+        <h2>Budget Amount:</h2>
+        $<input type="number" placeholder="Enter Budget Amount" required>
+      </div>
+    </form>
+    <form class="newExpenseItem">
+      <div class="expenseItemName">
+        <h2>Name:</h2>
+        <input type="text" placeholder="Enter Expense Name" required>
+      </div>
+      <div class="expenseItemAmount">
+        <h2>Charge:</h2>
+        $<input type="number" placeholder="Enter Expense Amount" required>
+      </div>
+      <div class="expenseItemDate">
+        <h2>Date:</h2>
+        <input type="text" placeholder="Enter Expense Date">
+      </div>
+      <div class="budgetItemName">
+        <h2>Select a category:</h2>
+        <select>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+        </select>
+      </div>
+    </form>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
