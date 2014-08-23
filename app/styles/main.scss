@@ -15,6 +15,13 @@ body {
   font: $font;
 }
 
+h1 {
+  font-family: 'Lobster', cursive;
+  color: #0A8619;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  font-size: 50px;
+}
 
 .profileInfo {
   background-color: $colorSoftGreen;
@@ -52,7 +59,8 @@ body {
   display: block;
   box-shadow: 1px 1px 5px 1px $colorSoftGreen;
   border-radius: 10px;
-  margin: 15px 5px;
+  margin: 10px;
+
 
   ul {
     list-style-type: none;
