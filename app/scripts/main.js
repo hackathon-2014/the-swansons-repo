@@ -16,7 +16,7 @@ $(document).ready(function() {
           + "<h2>Budget Amount:</h2>"
           + "$<input type=\"number\" placeholder=\"Enter Budget Amount\" required>"
         + "</div>"
-        + "<div class=\"expenseItemCategory\">"
+        + "<div class=\"budgetItemCategory\">"
           + "<h2>Select a category:</h2>"
           + "<select>"
             + "<option value=\"work\">Work</option>"
@@ -58,8 +58,18 @@ $(document).ready(function() {
 
   });
 
-  $('.newBudget').on('submit', '.budgetSubmit', function() {
+  $('.mainContainer').on('submit', '.newBudget', function(event) {
 
+      event.preventDefault();
+
+      var newbudget = {
+
+        name:$(this).find('.budgetItemName input').val(),
+        amount:$(this).find('.budgetItemAmount input').val(),
+        category:$(this).find('.budgetItemCategory option').val(),
+        expense:[]
+
+      };
 
   });
 
