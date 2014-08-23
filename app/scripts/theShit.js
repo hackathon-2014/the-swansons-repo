@@ -1,5 +1,24 @@
 var item;
 
+var goTime = function($target) {
+  var timelineTmpl = '';
+  for (var k = 0; k < 2; k ++) {
+    timelineTmpl += "<h3>" + data.budget[k].budg_name + "</h3><h3>" + data.budget[k].budg_amount + "</h3>"
+    for (var j = 0; j < 2; j++) {
+      timelineTmpl += "<div class=\"expenseDesc\"><h3 class=\"expenseName\">" + data.budget[k].budg_expence[j].ex_name + "</h3><h3 class=\"expenseDate\">" + data.budget[k].budg_expence[j].ex_date + "</h3><h3 class=\"expenseAmount\">" + data.budget[k].budg_expence[j].ex_amount + "</h3></div>"
+    }
+  };
+
+  "<% for (var i=0; i < 2; i++) { %>",
+  //       //   "<div class=\"expenseDesc\">",
+  //       //     "<h3 class=\"expenseName\"><%= element.budg_expence[i].ex_name %></h3>",
+  //       //     "<h3 class=\"expenseDate\"><%= element.budg_expence[i].ex_date %></h3>",
+  //       //     "<h3 class=\"expenseAmount\"><%= element.budg_expence[i].ex_amount %></h3>",
+  //       //   "</div>",
+
+  $target.html(timelineTmpl);
+};
+
 $(document).ready(function () {
   console.log('main.js is go');
   swanson.init();
@@ -80,7 +99,7 @@ var swanson = {
           console.log('get is go');
           window.data = response;
           console.log(data);
-          render(timelineTmpl, data, $('.mainContainer'));
+          goTime($('.mainContainer'));
           console.log('should render the damn template');
 
           $('.profileInfo').children('.info').children('.username').append(response.name);
