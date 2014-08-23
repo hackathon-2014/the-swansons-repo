@@ -18,17 +18,22 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
   </head>
 <!-- BODY STARTS HERE !!!!!!!!!!!!!-->
   <body>
+
+    <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+
+    <a class="left-off-canvas-toggle" href="#" ><i class="fa fa-bars"></i></a>
+
     <!-- Off Canvas Menu -->
     <aside class="right-off-canvas-menu">
         <!-- whatever you want goes here -->
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
+        <ul class="budgetDisplay">
+
         </ul>
     </aside>
 
@@ -73,7 +78,6 @@
 
     <br/>
 
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -90,6 +94,7 @@
     <script src="../bower_components/foundation/js/foundation/foundation.tab.js"></script>
     <script src="scripts/templates.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/theShit.js"></script>
     <script type="text/javascript">$(document).foundation();</script>
   </body>
 </html>

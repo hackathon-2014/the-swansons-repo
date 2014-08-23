@@ -1,3 +1,5 @@
+var database = "http://tiy-fee-rest.herokuapp.com/collections/brendansTeam"
+
 $(document).ready(function() {
   $(".login").on('click', '.login_button', function (event) {
     event.preventDefault();
@@ -21,6 +23,13 @@ $(document).ready(function() {
         + "<div class=\"budgetItemAmount\">"
           + "<h2>Budget Amount:</h2>"
           + "$<input type=\"number\" placeholder=\"Enter Budget Amount\" required>"
+        + "</div>"
+        + "<div class=\"budgetItemCategory\">"
+          + "<h2>Select a category:</h2>"
+          + "<select>"
+            + "<option value=\"work\">Work</option>"
+            + "<option value=\"personal\">Personal</option>"
+          + "</select>"
         + "</div>"
         + "<input class=\"budgetSubmit\" type=\"submit\">"
       + "</form>"
@@ -47,13 +56,6 @@ $(document).ready(function() {
           + "<h2>Date:</h2>"
           + "<input type=\"date\" placeholder=\"Enter Expense Date\">"
         + "</div>"
-        + "<div class=\"budgetItemCategory\">"
-          + "<h2>Select a category:</h2>"
-          + "<select>"
-            + "<option value=\"work\">Work</option>"
-            + "<option value=\"personal\">Personal</option>"
-          + "</select>"
-        + "</div>"
         + "<div class=\"expenseItemReceipt\">"
           + "<input type=\"file\" accept=\"image/JPEG\">"
         + "</div>"
@@ -61,6 +63,44 @@ $(document).ready(function() {
       + "</form>"
 
     );
+
+  });
+
+  $('.mainContainer').on('submit', '.newBudget', function(event) {
+
+      event.preventDefault();
+
+      var newbudget = {
+
+        name:$(this).find('.budgetItemName input').val(),
+        amount:$(this).find('.budgetItemAmount input').val(),
+        category:$(this).find('.budgetItemCategory option').val(),
+        expense:[]
+
+      };
+
+  });
+
+  $('.inner-wrap').on('click', 'a', function(event) {
+
+    event.preventDefault();
+
+    $.ajax({
+
+      url:database,
+      type:"GET",
+      success:function(response) {
+
+        window.data = response;
+        console.log(data);
+
+        render(budgetTmpl, data, $('.budgetDisplay'));
+
+      }
+
+    });
+
+
 
   });
 
