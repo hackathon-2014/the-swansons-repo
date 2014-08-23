@@ -223,12 +223,44 @@ var swanson = {
 
         var newbudget = {
 
-          name:$(this).find('.budgetItemName input').val(),
-          amount:$(this).find('.budgetItemAmount input').val(),
-          category:$(this).find('.budgetItemCategory option').val(),
-          expense:["s"]
+          budg_name:$(this).find('.budgetItemName input').val(),
+          budg_amount:$(this).find('.budgetItemAmount input').val(),
+          budg_type:$(this).find('.budgetItemCategory option').val(),
+          budg_expence:[""]
 
         };
+
+        console.log(newbudget);
+
+        $.ajax({
+
+          url:database,
+          type:"GET",
+          success:function(response) {
+
+            window.data = response;
+            console.log(data);
+            var budge = data.budget
+            var updatedBudget = budge.push(newbudget);
+            console.log(updatedBudget);
+
+            /*$.ajax({
+
+              url:database,
+              type:"PUT",
+              data:updatedBudget,
+              success:function() {
+
+                goTime('.mainContainer');
+
+              }
+
+            });*/
+
+          }
+
+
+        });
 
     });
 
