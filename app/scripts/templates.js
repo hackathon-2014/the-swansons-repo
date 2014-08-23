@@ -29,8 +29,10 @@ var budgetTmpl = [
 
   "<%_.each(data, function(element, index, list) {%>",
 
-    "<li><%= element.budget[0].budg_name %>",
+    "<% for (var i=0; i < element.budget.length; i++) { %>",
 
-  "<%})%>"
+    "<li><%= element.budget[i].budg_name %></li>",
+
+  "<%};})%>"
 
 ].join('');
