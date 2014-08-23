@@ -1,16 +1,17 @@
-var newBudgetTmpl = [
+var timelineTmpl = [
 
   "<%_.each(mainProfileData, function(element, index, list) {%>",
 
-  "<form class=\"newBudget\">",
-    "<div class=\"budgetItemName\">",
-      "<h2>Budget Name:</h2>",
-      "<input type=\"text\" placeholder=\"Enter Budget Name\" required>",
+    "<h2><%= element.name %></h2>",
+    "<div class=\"bdgtAmount\">",
+      "<h3>$<%= element.amount %></h3>",
     "</div>",
-    "<div class=\"budgetItemAmount\">",
-      "<h2>Budget Amount:</h2>",
-      "$<input type=\"number\" placeholder=\"Enter Budget Amount\" required>",
+    "<div class=\"expenseDesc\">",
+      "<h3><%= element.expense.name %></h3>",
+      "<h4><%= element.expense.date %></h4>",
+      "<h4><%= element.expense.receipt %></h4>",
     "</div>",
-  "</form>"
 
-].join("");
+  "<%})%>"
+
+].join('');
