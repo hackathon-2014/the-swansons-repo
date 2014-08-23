@@ -191,9 +191,13 @@ var swanson = {
       type: 'GET',
       success: function (response) {
         var items = window.items = response;
+<<<<<<< HEAD
+        swanson.renderBudget(itemTmpl, items, $("#itemList"));
+=======
         //swanson.itemCount(items);
         //swanson.renderBudget(itemTmpl, items, $("#itemList"));
         swanson.renderBudget(budgetTmpl, items, $("#itemList"));
+>>>>>>> a19ccf7aabdb578f31200483740ac4f17baf46cc
 
       }
     });
