@@ -1,6 +1,6 @@
 var timelineTmpl = [
 
-  "<%_.each(mainProfileData, function(element, index, list) {%>",
+  "<%_.each(DATA, function(element, index, list) {%>",
 
     "<h2><%= element.name %></h2>",
     "<div class=\"bdgtAmount\">",
@@ -19,7 +19,7 @@ var timelineTmpl = [
 
 var budgetTmpl = [
 
-  "<%_.each(mainProfileData, function(element, index, list) {%>",
+  "<%_.each(DATA, function(element, index, list) {%>",
 
     "<li><%= element.name %>",
 
