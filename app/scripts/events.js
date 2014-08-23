@@ -14,6 +14,7 @@ $(document).ready(function() {
           + "<h2>Budget Amount:</h2>"
           + "$<input type=\"number\" placeholder=\"Enter Budget Amount\" required>"
         + "</div>"
+        + "<input class=\"budgetSubmit\" type=\"submit\">"
       + "</form>"
 
     );
@@ -22,6 +23,7 @@ $(document).ready(function() {
 
   $('.addExpense').on('click', function(event) {
 
+    event.preventDefault();
     $('.mainContainer').html(
 
       "<form class=\"newExpenseItem\">"
@@ -44,9 +46,10 @@ $(document).ready(function() {
             + "<option value=\"personal\">Personal</option>"
           + "</select>"
         + "</div>"
-        + "<div class=\"budgetItemReceipt\">"
+        + "<div class=\"expenseItemReceipt\">"
           + "<input type=\"file\" accept=\"image/JPEG\">"
         + "</div>"
+        + "<input class=\"expenseSubmit\" type=\"submit\">"
       + "</form>"
 
     );
