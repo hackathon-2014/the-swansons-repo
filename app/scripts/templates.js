@@ -36,3 +36,12 @@ var budgetTmpl = [
   "<%};})%>"
 
 ].join('');
+
+var passTmpl = [
+  "<%_.each(data, function(element, index, list) {%>",
+  "<% if(element.name === user) %>",
+
+    "<p> Welcome!!!! To make signing-in easy in the future, save this id: <span> <%= element._id %> </span> and enter it in the \"Sign-In\" text-box",
+
+  "<%})%>"
+].join('');
