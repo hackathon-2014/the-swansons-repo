@@ -30,6 +30,7 @@ var swanson = {
 
       $('.profileInfo').children('.info').children('.username').append(user);
       $('.login').hide();
+      $('.login_id_form').hide();
       $('section').removeClass('hide');
 
       $.ajax({
@@ -64,6 +65,39 @@ var swanson = {
       console.log('id number should have been posted');
     });
 
+
+    //CLICKING SUBMIT ON THE LOG-IN FORM
+    $('.login_id_form').on('submit', function(e) {
+      e.preventDefault();
+      console.log('username go');
+      var sign_in_id = window.sign_in_id = $(this).find('.login_id').val();
+
+      $.ajax({
+
+        url:database + '/' + sign_in_id,
+        type:"GET",
+        success:function(response){
+          console.log('get is go');
+          window.data = response;
+          console.log(data);
+          render(timelineTmpl, data, $('.mainContainer'));
+          console.log('should render the damn template');
+
+          $('.profileInfo').children('.info').children('.username').append(response.name);
+          $('.login').hide();
+          $('.login_id_form').hide();
+          $('section').removeClass('hide');
+        }
+
+      });
+
+        console.log('create end');
+      console.log('username end');
+      console.log('post id number');
+
+      //render(passTmpl, swanson.url, $('.mainContainer'));
+      console.log('id number should have been posted');
+    });
     //shows budget
     $('.addBudget').on('click', function(event) {
 
@@ -136,6 +170,77 @@ var swanson = {
 
     });
 
+    //CREATING BUDGETS
+    $('.addBudget').on('click', function(event) {
+
+      event.preventDefault();
+      $('.mainContainer').html(
+
+        "<form class=\"newBudget large-4 medium-6 small-12\">"
+          + "<div class=\"budgetItemName\">"
+            + "<h2>Budget Name:</h2>"
+            + "<input type=\"text\" placeholder=\"Enter Budget Name\" required>"
+          + "</div>"
+          + "<div class=\"budgetItemAmount\">"
+            + "<h2>Budget Amount:</h2>"
+            + "$<input type=\"number\" placeholder=\"Enter Budget Amount\" required>"
+          + "</div>"
+          + "<div class=\"budgetItemCategory\">"
+            + "<h2>Select a category:</h2>"
+            + "<select>"
+              + "<option value=\"work\">Work</option>"
+              + "<option value=\"personal\">Personal</option>"
+            + "</select>"
+          + "</div>"
+          + "<input class=\"budgetSubmit\" type=\"submit\">"
+        + "</form>"
+
+      );
+
+    });
+    $('.mainContainer').on('submit', '.newBudget', function(event) {
+
+        event.preventDefault();
+
+        var newbudget = {
+
+          name:$(this).find('.budgetItemName input').val(),
+          amount:$(this).find('.budgetItemAmount input').val(),
+          category:$(this).find('.budgetItemCategory option').val(),
+          expense:["s"]
+
+        };
+
+    });
+
+    $('.addExpense').on('click', function(event) {
+
+      event.preventDefault();
+      $('.mainContainer').html(
+
+        "<form class=\"newExpenseItem large-4 medium-6 small-12\">"
+          + "<div class=\"expenseItemName\">"
+            + "<h2>Name:</h2>"
+            + "<input type=\"text\" placeholder=\"Enter Expense Name\" required>"
+          + "</div>"
+          + "<div class=\"expenseItemAmount\">"
+            + "<h2>Charge:</h2>"
+            + "$<input type=\"number\" placeholder=\"Enter Expense Amount\" required>"
+          + "</div>"
+          + "<div class=\"expenseItemDate\">"
+            + "<h2>Date:</h2>"
+            + "<input type=\"date\" placeholder=\"Enter Expense Date\">"
+          + "</div>"
+          + "<div class=\"expenseItemReceipt\">"
+            + "<input type=\"file\" accept=\"image/JPEG\">"
+          + "</div>"
+          + "<input class=\"expenseSubmit tiny button\" type=\"submit\">"
+        + "</form>"
+
+      );
+
+    });
+
     /*Event to render budget timeline*/
   },
   initStyling: function () {
@@ -156,14 +261,9 @@ var swanson = {
       type: 'GET',
       success: function (response) {
         var items = window.items = response;
-<<<<<<< HEAD
-        swanson.renderBudget(itemTmpl, items, $("#itemList"));
-=======
         //swanson.itemCount(items);
         //swanson.renderBudget(itemTmpl, items, $("#itemList"));
         swanson.renderBudget(budgetTmpl, items, $("#itemList"));
->>>>>>> a19ccf7aabdb578f31200483740ac4f17baf46cc
-
       }
     });
 
