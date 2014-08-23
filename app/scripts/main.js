@@ -1,3 +1,5 @@
+var database = "http://tiy-fee-rest.herokuapp.com/collections/brendansTeam"
+
 $(document).ready(function() {
 
   $('.addBudget').on('click', function(event) {
@@ -13,6 +15,13 @@ $(document).ready(function() {
         + "<div class=\"budgetItemAmount\">"
           + "<h2>Budget Amount:</h2>"
           + "$<input type=\"number\" placeholder=\"Enter Budget Amount\" required>"
+        + "</div>"
+        + "<div class=\"expenseItemCategory\">"
+          + "<h2>Select a category:</h2>"
+          + "<select>"
+            + "<option value=\"work\">Work</option>"
+            + "<option value=\"personal\">Personal</option>"
+          + "</select>"
         + "</div>"
         + "<input class=\"budgetSubmit\" type=\"submit\">"
       + "</form>"
@@ -39,13 +48,6 @@ $(document).ready(function() {
           + "<h2>Date:</h2>"
           + "<input type=\"date\" placeholder=\"Enter Expense Date\">"
         + "</div>"
-        + "<div class=\"expenseItemCategory\">"
-          + "<h2>Select a category:</h2>"
-          + "<select>"
-            + "<option value=\"work\">Work</option>"
-            + "<option value=\"personal\">Personal</option>"
-          + "</select>"
-        + "</div>"
         + "<div class=\"expenseItemReceipt\">"
           + "<input type=\"file\" accept=\"image/JPEG\">"
         + "</div>"
@@ -53,6 +55,11 @@ $(document).ready(function() {
       + "</form>"
 
     );
+
+  });
+
+  $('.newBudget').on('submit', '.budgetSubmit', function() {
+
 
   });
 
