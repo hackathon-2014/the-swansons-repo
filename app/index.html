@@ -50,6 +50,16 @@
 
     <!-- main content goes here -->
 
+    <section>
+      <header class=profileInfo>
+        <img src="" alt="">
+        <h2 class="username"></h2>
+      </header>
+      <a href="" class="addBudget">+ Budget</a>
+      <a href="" class="addExpense">+ Expense</a>
+      <div class="mainContainer">
+      </div>
+    </section>
   <!-- close the off-canvas menu -->
   <a class="exit-off-canvas"></a>
 
@@ -58,58 +68,6 @@
 
     <br/>
 
-    <!-- NEW BUDGET FORM -->
-
-    <form class="newBudget">
-      <div class="budgetItemName">
-        <h2>Budget Name:</h2>
-        <input type="text" placeholder="Enter Budget Name" required>
-      </div>
-      <div class="budgetItemAmount">
-        <h2>Budget Amount:</h2>
-        $<input type="number" placeholder="Enter Budget Amount" required>
-      </div>
-    </form>
-
-    <!-- NEW EXPENSE FORM -->
-    <form class="newExpenseItem">
-      <div class="expenseItemName">
-        <h2>Name:</h2>
-        <input type="text" placeholder="Enter Expense Name" required>
-      </div>
-      <div class="expenseItemAmount">
-        <h2>Charge:</h2>
-        $<input type="number" placeholder="Enter Expense Amount" required>
-      </div>
-      <div class="expenseItemDate">
-        <h2>Date:</h2>
-        <input type="date" placeholder="Enter Expense Date">
-      </div>
-      <div class="budgetItemCategory">
-        <h2>Select a category:</h2>
-        <select>
-          <option value="work">Work</option>
-          <option value="personal">Personal</option>
-        </select>
-      </div>
-      <div class="budgetItemReceipt">
-        <input type="file" accept="image/JPEG">
-      </div>
-    </form>
-
-    <ul>
-      <li><button class="button" type="submit">Login</button></li>
-    </ul>
-
-    <!-- BUDGET TIMELINE -->
-    <section class="budgetTimeline">
-      <div class="budget">
-
-      </div>
-      <div class=expense>
-
-      </div>
-    </section>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -125,7 +83,8 @@
     <script src="../bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
     <script src="../bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
     <script src="../bower_components/foundation/js/foundation/foundation.tab.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/main.js"></script>
     <script type="text/javascript">$(document).foundation();</script>
-
   </body>
 </html>
