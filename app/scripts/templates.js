@@ -6,37 +6,39 @@ var render = function(template, data, element) {
 
 };
 
-// var timelineTmpl = [
-//
-//   //"<%_.each(data, function(element, index, list) {%>",
-//
-//   "<% for (var i=0; i < 2; i++) { %>",
-//
-//     "<h3><%= data.budget[i].budg_name %></h3>",
-//     "<h3><%= data.budget[i].budg_amount %></h3>",
-//
-//       // "<% for (var i=0; i < 2; i++) { %>",
-//       //   "<div class=\"expenseDesc\">",
-//       //     "<h3 class=\"expenseName\"><%= element.budg_expence[i].ex_name %></h3>",
-//       //     "<h3 class=\"expenseDate\"><%= element.budg_expence[i].ex_date %></h3>",
-//       //     "<h3 class=\"expenseAmount\"><%= element.budg_expence[i].ex_amount %></h3>",
-//       //   "</div>",
-//       // "<%} %>",
-//
-//   "<%} %>",
-//
-//
-//     /*"<div class=\"bdgtAmount\">",
-//       "<h3>$<%= element.amount %></h3>",
-//     "</div>",
-//     "<div class=\"expenseDesc\">",
-//       "<h3 class=\"expenseName\"><%= element.expense.name %></h3>",
-//       "<h4 class=\"expenseDate\"><%= element.expense.date %></h4>",
-//       "<h4 class=\"expenseReceipt\"><%= element.expense.receipt %></h4>",
-//       "<h4 class=\"expenseCat\"><%= element.expense.category %></h4>",
-//     "</div>",*/
-//
-//   //"<%})%>"
+var timelineTmpl = [
+
+  "<%_.each(data, function(element, index, list) {%>",
+
+    "<h2><%= element.budget %></h2>",
+
+  // "<% for (var i=0; i < 2; i++) { %>",
+  //
+  //   "<h3><%= element.budget[i].budg_name %></h3>",
+  //   "<h3><%= element.budget[i].budg_amount %></h3>",
+  //
+  //     "<% for (var i=0; i < 2; i++) { %>",
+  //       "<div class=\"expenseDesc\">",
+  //         "<h3 class=\"expenseName\"><%= element.budg_expence[i].ex_name %></h3>",
+  //         "<h3 class=\"expenseDate\"><%= element.budg_expence[i].ex_date %></h3>",
+  //         "<h3 class=\"expenseAmount\"><%= element.budg_expence[i].ex_amount %></h3>",
+  //       "</div>",
+  //     "<%} %>",
+  //
+  // "<%} %>",
+
+
+    /*"<div class=\"bdgtAmount\">",
+      "<h3>$<%= element.amount %></h3>",
+    "</div>",
+    "<div class=\"expenseDesc\">",
+      "<h3 class=\"expenseName\"><%= element.expense.name %></h3>",
+      "<h4 class=\"expenseDate\"><%= element.expense.date %></h4>",
+      "<h4 class=\"expenseReceipt\"><%= element.expense.receipt %></h4>",
+      "<h4 class=\"expenseCat\"><%= element.expense.category %></h4>",
+    "</div>",*/
+
+  "<%})%>"
 
 ].join('');
 

@@ -3,11 +3,11 @@ var item;
 var goTime = function($target) {
   var timelineTmpl = '';
   for (var k = 0; k < 2; k ++) {
-    timelineTmpl += "<div class=\"Will\"<h3>" + data.budget[k].budg_name + "</h3><h3>" + data.budget[k].budg_amount + "</h3>"
+    timelineTmpl += "<div class=\"Will large-4 medium-6 small-12\"> <h3 class=\"budget\"> " + data.budget[k].budg_name+ " = $" + data.budget[k].budg_amount + "</h3>";
     var current_budget = data.budget[k].budg_amount;
     for (var j = 0; j < 2; j++) {
       current_budget -= data.budget[k].budg_expence[j].ex_amount;
-      timelineTmpl += "<div class=\"expenseDesc\"><h3 class=\"expenseName\">" + data.budget[k].budg_expence[j].ex_name + "</h3><h3 class=\"expenseDate\">" + data.budget[k].budg_expence[j].ex_date + "</h3><h3 class=\"expenseAmount\">Cost: " + data.budget[k].budg_expence[j].ex_amount + "</h3><h3 class=\"remainingBudget\">Remaining Budget: " + current_budget + "<h3></div>"
+      timelineTmpl += "<div class=\"expenseDesc\"><h3 class=\"expenseName\">" + data.budget[k].budg_expence[j].ex_name + "</h3><h3 class=\"expenseDate\">" + data.budget[k].budg_expence[j].ex_date + "</h3><h3 class=\"expenseAmount\">Cost: $" + data.budget[k].budg_expence[j].ex_amount + "</h3><h3 class=\"remainingBudget\">Remaining Budget: " + current_budget + "<h3></div>"
     }
   timelineTmpl += "</div>";
   };
@@ -272,15 +272,42 @@ var swanson = {
     $('.mainContainer').on('submit', '.newBudget', function(event) {
 
         event.preventDefault();
-
         var newbudget = {
 
-          name:$(this).find('.budgetItemName input').val(),
-          amount:$(this).find('.budgetItemAmount input').val(),
-          category:$(this).find('.budgetItemCategory option').val(),
-          expense:["s"]
+          budg_name:$(this).find('.budgetItemName input').val(),
+          budg_amount:$(this).find('.budgetItemAmount input').val(),
+          budg_type:$(this).find('.budgetItemCategory option').val(),
+          budg_expence:[""]
 
         };
+
+        $.ajax({
+
+          url:database + "/" + sign_in_id,
+          type:"GET",
+          success:function(response) {
+
+            window.data = response;
+            data.budget.push(newbudget);
+            console.log(data)
+
+            $.ajax({
+
+              url:database + "/" + sign_in_id,
+              type:"PUT",
+              data:data,
+              success:function() {
+
+                console.log("NEW BUDGET ADDED");
+
+              }
+
+
+            });
+
+          }
+
+        });
 
     });
 
