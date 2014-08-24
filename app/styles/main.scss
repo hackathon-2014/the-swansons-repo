@@ -143,3 +143,45 @@ section {
 .expenseSubmit:hover {
   background-color: $colorBrown;
 }
+
+.Will {
+  margin: 20px;
+  border-top: 2px dotted $colorBrown;
+
+  .budget {
+    font-size: 30px;
+    font: $font;
+    color: $colorSoftGreen;
+  }
+
+  .expenseDesc{
+    margin-left: 20px;
+    margin-bottom: 30px;
+
+  }
+
+  .expenseName {
+    font-size: 19px;
+
+  }
+
+  .expenseDate {
+    font-size: 13px;
+    color: $colorBrown;
+  }
+
+  .expenseAmount {
+    font-size: 13px;
+    color: red;
+  }
+
+  .remainingBudget {
+    border-bottom: 5px solid $colorSoftGreen;
+  }
+
+}
+
+
+.addBudget {
+    margin-left: 10px;
+}
