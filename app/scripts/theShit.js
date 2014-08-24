@@ -222,7 +222,6 @@ var swanson = {
     $('.mainContainer').on('submit', '.newBudget', function(event) {
 
         event.preventDefault();
-
         var newbudget = {
 
           budg_name:$(this).find('.budgetItemName input').val(),
@@ -232,35 +231,31 @@ var swanson = {
 
         };
 
-        console.log(newbudget);
-
         $.ajax({
 
-          url:database,
+          url:database + "/" + sign_in_id,
           type:"GET",
           success:function(response) {
 
             window.data = response;
-            console.log(data);
-            var budge = data.budget
-            var updatedBudget = budge.push(newbudget);
-            console.log(updatedBudget);
+            data.budget.push(newbudget);
+            console.log(data)
 
-            /*$.ajax({
+            $.ajax({
 
-              url:database,
+              url:database + "/" + sign_in_id,
               type:"PUT",
-              data:updatedBudget,
+              data:data,
               success:function() {
 
-                goTime('.mainContainer');
+                console.log("NEW BUDGET ADDED");
 
               }
 
-            });*/
+
+            });
 
           }
-
 
         });
 
