@@ -153,30 +153,86 @@ var swanson = {
     $('.addExpense').on('click', function(event) {
 
       event.preventDefault();
-      $('.mainContainer').html(
-
-        "<form class=\"newExpenseItem\">"
-          + "<div class=\"expenseItemName\">"
-            + "<h2>Name:</h2>"
-            + "<input type=\"text\" placeholder=\"Enter Expense Name\" required>"
-          + "</div>"
-          + "<div class=\"expenseItemAmount\">"
-            + "<h2>Charge:</h2>"
-            + "$<input type=\"number\" placeholder=\"Enter Expense Amount\" required>"
-          + "</div>"
-          + "<div class=\"expenseItemDate\">"
-            + "<h2>Date:</h2>"
-            + "<input type=\"date\" placeholder=\"Enter Expense Date\">"
-          + "</div>"
-          + "<div class=\"expenseItemReceipt\">"
-            + "<input type=\"file\" accept=\"image/JPEG\">"
-          + "</div>"
-          + "<input class=\"expenseSubmit\" type=\"submit\">"
-        + "</form>"
-
-      );
-
+      $.ajax({
+        url: swanson.url + "/" + sign_in_id,
+        type: 'GET',
+        success: function (response) {
+          var data = window.data = response;
+            var ballz = "<form class=\"newExpenseItem\">"
+              + "<div class=\"selectBudger\">"
+                + "<h2>Budget:</h2>"
+                + "<select>";
+            for(var i = 0; i < data.budget.length; i++) {
+            ballz += "<option class=\"budger\" value=\""+ i + "\">" + data.budget[i].budg_name +"</option>";}
+            ballz += "</select>"
+              + "</div>"
+              + "<div class=\"expenseItemName\">"
+                + "<h2>Name:</h2>"
+                + "<input type=\"text\" placeholder=\"Enter Expense Name\" required>"
+              + "</div>"
+              + "<div class=\"expenseItemAmount\">"
+                + "<h2>Charge:</h2>"
+                + "$<input type=\"number\" placeholder=\"Enter Expense Amount\" required>"
+              + "</div>"
+              + "<div class=\"expenseItemDate\">"
+                + "<h2>Date:</h2>"
+                + "<input type=\"date\" placeholder=\"Enter Expense Date\">"
+              + "</div>"
+              + "<div class=\"expenseItemReceipt\">"
+                + "<input type=\"file\" accept=\"image/JPEG\">"
+              + "</div>"
+              + "<input class=\"expenseSubmit\" type=\"submit\">"
+            + "</form>"
+          $('.mainContainer').html(ballz);
+        }
+      });
     });
+
+    $('.mainContainer').on('submit', '.newExpenseItem', function (e) {
+      e.preventDefault();
+      console.log('charge submit is go');
+      var budgetNum = $(this).find('.budger').val();
+      console.log(budgetNum);
+      var name = $(this).find('.expenseItemName').find('input').val();
+      console.log(name);
+      var charge = $(this).find('.expenseItemAmount').find('input').val();
+      console.log(charge);
+      var date = $(this).find('.expenseItemDate').find('input').val();
+      console.log(date);
+      var receipt = $(this).find('.expenseItemReceipt').find('input').val();
+      console.log(receipt);
+
+      var newExpense = {
+        ex_name: name,
+        ex_amount: charge,
+        ex_date: date,
+        ex_receipt: receipt
+      };
+
+      $.ajax({
+        url: swanson.url + "/" + sign_in_id,
+        type: 'GET',
+        success: function (response) {
+          var data = window.data = response;
+          data.budget[budgetNum].budg_expence.push(newExpense);
+          console.log(data);
+          $.ajax({
+            url: swanson.url + "/" + sign_in_id,
+            type: "PUT",
+            data: data,
+            success: function (response) {
+              // something goes here
+              console.log(response);
+              // swanson.getBudget();
+            }
+          });
+
+        }
+      });
+
+
+      console.log('end submit of charge')
+    })
     $('.addExpense').on('dblclick', function(event) {
 
       event.preventDefault();
